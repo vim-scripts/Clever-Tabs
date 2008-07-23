@@ -1,0 +1,24 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2308
+
+" Script solving indentation problem. Main idea is
+" have tabs ("\t") at the beginning of line and 
+" after first another character like "\t" use spaces (like expandtab).
+" This is useful for code readability. I'm trying to join these two ways:
+" * http://www.movement.uklinux.net/docs/whytabs/
+" * http://www.derkarl.org/why_to_tabs.html
+" with using the best ideas from both.
+"
+" main() {
+"     printf("hello");    //my comment
+"     printf("world!");   //my comment 2
+" }
+" 
+" Before printf are tabs (this is block) anda before comments
+" are tabs converted into spaces. After you change 
+" tabstop (for tabelator size), part with comments will 
+" have still same format, becuase tabs are only on line beginnig.
+"
+" note:    parameter for CleverTabs is shiftwidth in spaces
+" note2:   this is my first script in vim, please be patient
+"
+" special thanks to james pickard for useful advices
