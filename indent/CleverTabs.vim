@@ -1,4 +1,4 @@
-" CleverTabs v1.0.1: Martin Spevak 2008
+" CleverTabs v1.0.2: Martin Spevak 2008
 " contact: martin.spevak [at] mobitola.sk
 "
 " Script solving indentation problem. Main idea is
@@ -29,23 +29,23 @@
 
 " clever tabs (tabs only on the line beginning)
 function! CleverTabs(shiftwidth)
-    let line = getline('.')[:col('.')-2]
-    if col('.') == 1 || line =~ '^\t*$' || line =~ '^$'
-        let z = "\t"
-    else
-        let space = ""
-        let shiftwidth = a:shiftwidth
-        let shiftwidth = shiftwidth - (col('.') % shiftwidth)
+	let line = getline('.')[:col('.')-2]
+	if col('.') == 1 || line =~ '^\t*$' || line =~ '^$'
+		let z = "\t"
+	else
+		let space = ""
+		let shiftwidth = a:shiftwidth
+		let shiftwidth = shiftwidth - ((virtcol('.')-1) % shiftwidth)
 
-        while shiftwidth > 0
-            let shiftwidth = shiftwidth - 1
-            let space = space . ' '
-        endwhile
+		while shiftwidth > 0
+			let shiftwidth = shiftwidth - 1
+			let space = space . ' '
+		endwhile
 
-        let z = space
-    endif
+		let z = space
+	endif
 
-    return z
+	return z
 endfunction "CleverTabs
 
 " map tab key to function
