@@ -49,7 +49,7 @@ function! CleverTabs(shiftwidth)
 endfunction "CleverTabs
 
 " map tab key to function
-imap <silent> <Tab> <C-r>=CleverTabs(4)<cr>
+imap <silent> <Tab> <C-r>=CleverTabs(shiftwidth())<cr>
 
 " highlight tabs in code
 highlight ExtraWhitespace ctermbg=07
